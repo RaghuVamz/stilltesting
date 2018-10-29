@@ -31,22 +31,26 @@ module.exports = {
             name: 'mobile',
             type: 'String',
             not_null: true,
+            length: 50,
             unique: true,
         },
         {
             name: 'designation',
             type: 'String',
+            length: 50,
             not_null: true,
         },
         {
             name: 'walletAddr',
             type: 'String',
             not_null: true,
+            length: 50,
             unique: true,
         },
         {
             name: 'salary',
             type: 'String',
+            length: 50,
             not_null: true,
         },
     ]
