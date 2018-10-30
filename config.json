@@ -7,7 +7,7 @@
                 "host": "smtp.gmail.com",
                 "port": 587,
                 "auth": {
-                    "user": "john.vikingsdownload.com",
+                    "user": "john.vikingsdownload@gmail.com",
                     "pass": "Windlm946356"
                 },
                 "tls": { "rejectUnauthorized": false},
