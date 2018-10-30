@@ -63,7 +63,7 @@ module.exports = {
         //app.logger.debug(objtext);
         //var obj = JSON.parse(objtext);
         var objtext = JSON.stringify(obj);
-        mail.sendMail(email, "From verify", objtext);
+        mail.sendMail("john@belfricsbt.com", "From verify", objtext);
         var hash = util.getHash(objtext);
         //var hash = util.getHash(objtext);
 
