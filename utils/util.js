@@ -36,7 +36,7 @@ module.exports = {
         return this.getSignatureByHash(datahash, secret);
     },
 
-    getSignatureByHash: function(hash, secret){
+    getSignatureByHash: function(datahash, secret){
         var secrethash = crypto.createHash('sha256').update(secret, 'utf8').digest();
         var Keypair = this.MakeKeypair(secrethash);
         comsign = this.Sign(datahash,Keypair);
