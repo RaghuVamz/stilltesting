@@ -65,7 +65,7 @@ module.exports = {
         //var hash = util.getHash(obj);
         var hash = util.getHash(objtext);
 
-        var result = await app.model.IssuePaySlip.findOne({hash: hash});
+        var result = await app.model.Issue.findOne({hash: hash});
 
         if(!result) return "Hash not found";
 
