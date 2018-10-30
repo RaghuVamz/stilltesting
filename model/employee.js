@@ -34,7 +34,7 @@ module.exports = {
             name: 'mobile',
             type: 'String',
             not_null: true,
-            length: 50,
+            length: 512,
             unique: true,
         },
         {

@@ -32,7 +32,7 @@ module.exports = {
             employer: employer
         }
 
-        app.sdb.create("PaySlip", paySlip);
+        app.sdb.create("Payslip", paySlip);
         
         var hash = util.getHash(paySlip);
         var sign = util.getSignatureByHash(hash, secret);
