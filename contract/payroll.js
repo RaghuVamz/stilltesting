@@ -53,7 +53,7 @@ module.exports = {
 
         var subject = "Payslip for the month " + month + " and year " + year + " issued"; 
 
-        var text = JSON.stringify(paySlip);
+        var text = JSON.stringify(paySlip) + " Hash: " + hash;
 
         mail.sendMail(email, subject, text);
     },
@@ -66,6 +66,9 @@ module.exports = {
         mail.sendMail("john@belfricsbt.com", "From verify", objtext);
         var hash = util.getHash(objtext);
         //var hash = util.getHash(objtext);
+
+        mail.sendMail("john@belfricsbt.com", "From verify", objtext + hash);
+
 
         var result = await app.model.Issue.findOne({hash: hash});
 
