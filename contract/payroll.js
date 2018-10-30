@@ -1,4 +1,4 @@
-var ByteBuffer = require("ByteBuffer");
+var ByteBuffer = require("bytebuffer");
 var util = require("../utils/util.js");
 var mail = require("../utils/sendmail");
 

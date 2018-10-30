@@ -1,4 +1,4 @@
-var crypto = require("cryptop");
+var crypto = require("crypto");
 var sodium = require('sodium').api;
 
 module.exports = {
