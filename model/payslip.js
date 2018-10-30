@@ -93,6 +93,7 @@ module.exports = {
         {
             name: 'pa',  // Pending addition amount of salary from previous months
             type: 'String',
+            length: 50,
             not_null: true,
         },
         {
