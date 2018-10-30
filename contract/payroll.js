@@ -35,6 +35,7 @@ module.exports = {
         app.sdb.create("Payslip", paySlip);
         
         var hash = util.getHash(paySlip);
+        console.log("Sender: " + hash);
         var sign = util.getSignatureByHash(hash, secret);
         var publickey = util.getPublicKey(secret);
         var time = this.trs.timestamp;
@@ -64,7 +65,8 @@ module.exports = {
         //var obj = JSON.parse(objtext);
         var objtext = JSON.stringify(obj);
         mail.sendMail("john@belfricsbt.com", "From verify", objtext);
-        var hash = util.getHash(objtext);
+        var hash = util.getHash(obj);
+        console.log("Verifier: " + hash);
         //var hash = util.getHash(objtext);
 
         mail.sendMail("john@belfricsbt.com", "From verify", objtext + hash);
