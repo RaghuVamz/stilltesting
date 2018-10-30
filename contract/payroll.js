@@ -62,7 +62,7 @@ module.exports = {
         
         //app.logger.debug(objtext);
         //var obj = JSON.parse(objtext);
-        var hash = util.getHash(JSON.stringify(obj));
+        var hash = util.getHash(JSON.stringify(objtext));
         //var hash = util.getHash(objtext);
 
         var result = await app.model.Issue.findOne({hash: hash});
