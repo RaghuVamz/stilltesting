@@ -42,7 +42,7 @@ module.exports = {
         //var result = app.model.Employer.findOne({publickey: publickey});
         //var employer = result.name;\
 
-        app.sdb.create("IssuePaySlip", {
+        app.sdb.create("Issue", {
             hash: hash,
             sign: sign,
             publickey: publickey,
