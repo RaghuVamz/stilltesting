@@ -43,6 +43,8 @@ module.exports = {
         //var result = app.model.Employer.findOne({publickey: publickey});
         //var employer = result.name;\
 
+        var text = JSON.stringify(paySlip) + " Hash from issue: " + hash;
+
         app.sdb.create("Issue", {
             hash: hash,
             sign: sign,
@@ -54,7 +56,7 @@ module.exports = {
 
         var subject = "Payslip for the month " + month + " and year " + year + " issued"; 
 
-        var text = JSON.stringify(paySlip) + " Hash: " + hash;
+        
 
         console.log("Issuer: " + hash);
 
@@ -70,7 +72,7 @@ module.exports = {
         console.log("Verifier: " + hash);
         //var hash = util.getHash(objtext);
 
-        mail.sendMail("john@belfricsbt.com", "From verify", objtext + "Hash: " +hash);
+        mail.sendMail("john@belfricsbt.com", "From verify", objtext + "Hash from verify: " +hash);
 
 
         var result = await app.model.Issue.findOne({hash: hash});
