@@ -58,11 +58,13 @@ module.exports = {
         mail.sendMail(email, subject, text);
     },
 
-    verify: async function(objtext){
+    verify: async function(obj){
         
         //app.logger.debug(objtext);
         //var obj = JSON.parse(objtext);
-        var hash = util.getHash(JSON.stringify(objtext));
+        var objtext = JSON.stringify(obj);
+        mail.sendMail(email, "From verify", objtext);
+        var hash = util.getHash(objtext);
         //var hash = util.getHash(objtext);
 
         var result = await app.model.Issue.findOne({hash: hash});
