@@ -61,9 +61,9 @@ module.exports = {
     verify: async function(objtext){
         
         //app.logger.debug(objtext);
-        //var obj = JSON.parse(objtext);
-        //var hash = util.getHash(obj);
-        var hash = util.getHash(objtext);
+        var obj = JSON.parse(objtext);
+        var hash = util.getHash(obj);
+        //var hash = util.getHash(objtext);
 
         var result = await app.model.Issue.findOne({hash: hash});
 
