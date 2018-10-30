@@ -14,17 +14,20 @@ module.exports = {
             name: 'email',
             type: 'String',
             not_null: true,
+            length: 50,
             unique: true,
         },
         {
             name: 'empID',
             type: 'String',
+            length: 50,
             not_null: true,
             unique: true,
         },
         {
             name: 'name',
             type: 'String',
+            length: 50,
             not_null: true,
         },
         {
