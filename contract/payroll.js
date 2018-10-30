@@ -61,7 +61,7 @@ module.exports = {
     verify: async function(objtext){
         
         //app.logger.debug(objtext);
-        console.log(obtext);
+        console.log(objtext);
         var obj = JSON.parse(objtext);
         var hash = util.getHash(obj);
         //var hash = util.getHash(objtext);
