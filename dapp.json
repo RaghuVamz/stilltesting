@@ -1,17 +1,17 @@
 {
-  "name": "Asch sample Dapp",
-  "link": "https://github.com/sqfasd/asch-hello-dapp/archive/master.zip",
+  "name": "belrium-sidechain",
+  "link": "https://github.com/johnbonda/testing/archive/master.zip",
   "category": 1,
-  "description": "Asch Dapp",
-  "tags": "",
+  "description": "A test demo for belrium dapp",
+  "tags": "belrium,dapp,demo",
   "icon": "http://o7dyh3w0x.bkt.clouddn.com/hello.png",
+  "type": 0,
   "delegates": [
-    "d1facb776188e7776810b2f1d048dfc5c049cfaaea71db06092990522298f0f0",
-    "3a8ae68edd9a127a899365092a52778d03f1070a283e7cea1ad4efd83237602c",
-    "3ac06b5f1fbc35c5debb44d402f7d540de077bb1f68089328cb24554aaeaba21",
-    "d2c1508203415ea09b9197a7ccdcbdebf23ce6d7454ad21bfaa0c851f846f5b1",
-    "5daba5f0774903c3504065a375099b5b9b0452f7d970f85ad433c8a01ce6c20e"
+    "db18d5799944030f76b6ce0879b1ca4b0c2c1cee51f53ce9b43f78259950c2fd",
+    "590e28d2964b0aa4d7c7b98faee4676d467606c6761f7f41f99c52bb4813b5e4",
+    "bfe511158d674c3a1e21111223a49770bee93611d998e88a5d2ea3145de2b68b",
+    "7bbf62931cf3c596591a580212631aff51d6bc0577c54769953caadb23f6ab00",
+    "452df9213aedb3b9fed6db3e2ea9f49d3db226e2dac01828bc3dcd73b7a953b4"
   ],
-  "unlockDelegates": 3,
-  "type": 0
+  "unlockDelegates": 3
 }
