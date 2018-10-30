@@ -60,8 +60,10 @@ module.exports = {
 
     verify: async function(objtext){
         
-        var obj = JSON.parse(objtext);
-        var hash = util.getHash(obj);
+        //app.logger.debug(objtext);
+        //var obj = JSON.parse(objtext);
+        //var hash = util.getHash(obj);
+        var hash = util.getHash(objtext);
 
         var result = await app.model.IssuePaySlip.findOne({hash: hash});
 
