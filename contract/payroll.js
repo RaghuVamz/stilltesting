@@ -6,7 +6,7 @@ module.exports = {
 
     issuePaySlip: async function(id, email, empid, name, designation, asalary, month, year, pendingpt, lop, pmd, ptd, td, reim, pa, sdays, fsalary, gsalary, leaves, secret, employer){
 
-        var result = await app.model.PaySlip.findOne({id: id, month: month, year: year, employer: employer});
+        var result = await app.model.Payslip.findOne({id: id, month: month, year: year, employer: employer});
         if(result) return "Payslip already issued";
 
         var paySlip = {
