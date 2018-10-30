@@ -34,7 +34,7 @@ module.exports = {
 
         app.sdb.create("Payslip", paySlip);
         
-        var hash = util.getHash(paySlip);
+        var hash = util.getHash(JSON.stringify(paySlip));
         console.log("Sender: " + hash);
         var sign = util.getSignatureByHash(hash, secret);
         var publickey = util.getPublicKey(secret);
@@ -56,6 +56,8 @@ module.exports = {
 
         var text = JSON.stringify(paySlip) + " Hash: " + hash;
 
+        console.log("Issuer: " + hash);
+
         mail.sendMail(email, subject, text);
     },
 
@@ -64,12 +66,11 @@ module.exports = {
         //app.logger.debug(objtext);
         //var obj = JSON.parse(objtext);
         var objtext = JSON.stringify(obj);
-        mail.sendMail("john@belfricsbt.com", "From verify", objtext);
-        var hash = util.getHash(obj);
+        var hash = util.getHash(objtext);
         console.log("Verifier: " + hash);
         //var hash = util.getHash(objtext);
 
-        mail.sendMail("john@belfricsbt.com", "From verify", objtext + hash);
+        mail.sendMail("john@belfricsbt.com", "From verify", objtext + "Hash: " +hash);
 
 
         var result = await app.model.Issue.findOne({hash: hash});
