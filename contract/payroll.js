@@ -60,7 +60,7 @@ module.exports = {
 
         console.log("Issuer: " + hash);
 
-        mail.sendMail(email, subject, text);
+        // mail.sendMail(email, subject, text);
     },
 
     verify: async function(obj){
@@ -72,7 +72,7 @@ module.exports = {
         console.log("Verifier: " + hash);
         //var hash = util.getHash(objtext);
 
-        mail.sendMail("john@belfricsbt.com", "From verify", objtext + "Hash from verify: " +hash);
+        //mail.sendMail("john@belfricsbt.com", "From verify", objtext + "Hash from verify: " +hash);
 
 
         var result = await app.model.Issue.findOne({hash: hash});
