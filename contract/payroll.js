@@ -4,41 +4,33 @@ var mail = require("../utils/sendmail");
 
 module.exports = {
 
-    issuePaySlip: async function(id, email, empid, name, designation, asalary, month, year, pendingpt, lop, pmd, ptd, td, reim, pa, sdays, fsalary, gsalary, leaves, secret, employer){
+    issuePaySlip: async function(email, empid, name, employer, month, year, secret){
 
-        var result = await app.model.Payslip.findOne({id: id, month: month, year: year, employer: employer});
+        var result = await app.model.Payslip.findOne({
+            empid: empid,
+            employer: employer,
+            month: month,
+            year: year
+        });
+
         if(result) return "Payslip already issued";
 
         var paySlip = {
-            id: id,
             email: email,
             empid: empid,
             name: name,
-            designation: designation,
-            asalary: asalary,
+            employer: employer,
             month: month,
-            year: year,
-            pendingpt: pendingpt,
-            lop: lop,
-            pmd: pmd,
-            ptd: ptd,
-            td: td,
-            reim: reim,
-            pa: pa,
-            sdays: sdays,
-            fsalary: fsalary,
-            gsalary: gsalary,
-            leaves: leaves,
-            employer: employer
+            year: year
         }
 
         app.sdb.create("Payslip", paySlip);
         
         var hash = util.getHash(JSON.stringify(paySlip));
-        console.log("Sender: " + hash);
+        //console.log("Sender: " + hash);
         var sign = util.getSignatureByHash(hash, secret);
         var publickey = util.getPublicKey(secret);
-        var time = this.trs.timestamp;
+        //var time = this.trs.timestamp;
 
         //var result = app.model.Employer.findOne({publickey: publickey});
         //var employer = result.name;\
@@ -49,14 +41,12 @@ module.exports = {
             hash: hash,
             sign: sign,
             publickey: publickey,
-            timestamp: time,
         });  
         
         //Email
 
         var subject = "Payslip for the month " + month + " and year " + year + " issued"; 
 
-        
 
         console.log("Issuer: " + hash);
 

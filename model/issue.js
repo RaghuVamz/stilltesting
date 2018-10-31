@@ -4,31 +4,23 @@ module.exports = {
         {
             name: 'hash',
             type: 'String',
-            not_null: true,
-            unique: true,
             length: 100,
-            primary_key: true
+            not_null: true,
+            unique: true
         },
         {
             name: 'sign',
             type: 'String',
-            not_null: true,
             length: 100,
-            unique: true,
+            not_null: true,
+            unique: true
         },
         {
             name: 'publickey',
             type: 'String',
+            length: 100,
             not_null: true,
             unique: true,
-            length: 100,
-        },
-        {
-            name: 'timestamp',
-            type: 'String',
-            not_null: true,
-            length: 100,
-            unique: true,
-        },
+        }
     ]
 }

@@ -40,7 +40,7 @@ module.exports = {
         var secrethash = crypto.createHash('sha256').update(secret, 'utf8').digest();
         var Keypair = this.MakeKeypair(secrethash);
         comsign = this.Sign(datahash,Keypair);
-        console.log("companysign :"+comsign);
+        //console.log("companysign :"+comsign);
         return comsign;
     },
 
