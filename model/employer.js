@@ -1,5 +1,5 @@
 module.exports = {
-    name: "Employer",
+    name: "employer",
     fields: [
         {
             name: 'name',
