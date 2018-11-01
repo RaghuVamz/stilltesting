@@ -83,5 +83,6 @@ module.exports = {
 
         return true;
 
-    }
+    },
+
 }
