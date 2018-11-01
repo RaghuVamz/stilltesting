@@ -6,7 +6,8 @@ module.exports = {
             type: 'String',
             length: 100,
             not_null: true,
-            unique: true
+            unique: true,
+            index: true
         },
         {
             name: 'sign',

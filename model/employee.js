@@ -8,6 +8,7 @@ module.exports = {
             length: 100,
             not_null: true,
             unique: true,
+            index: true
         },
         {
             name: 'empID',
