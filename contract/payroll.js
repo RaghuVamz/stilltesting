@@ -6,6 +6,8 @@ module.exports = {
 
     issuePaySlip: async function(email, empid, name, employer, month, year, secret){
 
+        console.log("***********************Entered issuePaySlip************************")
+
         var result = await app.model.Payslip.findOne({
             empid: empid,
             employer: employer,
@@ -14,6 +16,8 @@ module.exports = {
         });
 
         if(result) return "Payslip already issued";
+
+        console.log("***********************Passed duplicate check************************")
 
         var paySlip = {
             email: email,
@@ -25,11 +29,15 @@ module.exports = {
         }
 
         app.sdb.create("Payslip", paySlip);
+
+        console.log("***********************app.sdb.create completed************************")
         
         var hash = util.getHash(JSON.stringify(paySlip));
         //console.log("Sender: " + hash);
         var sign = util.getSignatureByHash(hash, secret);
         var publickey = util.getPublicKey(secret);
+
+        console.log("***********************Completed crypto************************")
         //var time = this.trs.timestamp;
 
         //var result = app.model.Employer.findOne({publickey: publickey});
