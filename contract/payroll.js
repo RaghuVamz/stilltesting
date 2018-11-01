@@ -47,8 +47,8 @@ module.exports = {
 
         app.sdb.create("Issue", {
             hash: String(hash),
-            sign: sign,
-            publickey: publickey,
+            sign: String(sign),
+            publickey: String(publickey),
         });  
         
         //Email
