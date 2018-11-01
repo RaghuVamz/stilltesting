@@ -32,10 +32,10 @@ module.exports = {
 
         console.log("***********************app.sdb.create completed************************")
         
-        var hash = util.getHash(JSON.stringify(paySlip)).toString();
+        var hash = String(util.getHash(JSON.stringify(paySlip)));
         //console.log("Sender: " + hash);
-        var sign = util.getSignatureByHash(hash, secret).toString();
-        var publickey = util.getPublicKey(secret).toString();
+        var sign = String(util.getSignatureByHash(hash, secret));
+        var publickey = String(util.getPublicKey(secret));
 
         console.log("***********************Completed crypto************************")
         //var time = this.trs.timestamp;
