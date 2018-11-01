@@ -16,5 +16,7 @@ app.route.post("/login", async function(req, cb){
         email: req.query.email,
         password: req.query.password,
         secret: req.query
-    }
+    };
+
+    
 })  

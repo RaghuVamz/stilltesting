@@ -85,4 +85,6 @@ module.exports = {
 
     },
 
+    //registerEmployee: async function()
+
 }
